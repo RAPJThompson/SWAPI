@@ -1,8 +1,9 @@
-package com.swapi.models;
+package com.swapi.dao.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class HomeWorld {
+public class DaoHomeWorld {
 
   String name;
   Integer rotation_period;
@@ -19,11 +20,30 @@ public class HomeWorld {
   String edited;
   String url;
 
+  public DaoHomeWorld() {}
+
+  public DaoHomeWorld(DaoHomeWorld homeWorld) {
+    this.setName(homeWorld.getName())
+        .setRotation_period(homeWorld.getRotation_period())
+        .setOrbital_period(homeWorld.getOrbital_period())
+        .setDiameter(homeWorld.getDiameter())
+        .setClimate(homeWorld.getClimate())
+        .setGravity(homeWorld.getGravity())
+        .setTerrain(homeWorld.getTerrain())
+        .setSurface_water(homeWorld.getSurface_water())
+        .setPopulation(homeWorld.getPopulation())
+        .setResidents(new ArrayList<>(homeWorld.getResidents()))
+        .setFilms(new ArrayList<>(homeWorld.getFilms()))
+        .setCreated(homeWorld.getCreated())
+        .setEdited(homeWorld.getEdited())
+        .setUrl(homeWorld.getUrl());
+  }
+
   public String getName() {
     return name;
   }
 
-  public HomeWorld setName(String name) {
+  public DaoHomeWorld setName(String name) {
     this.name = name;
     return this;
   }
@@ -32,7 +52,7 @@ public class HomeWorld {
     return rotation_period;
   }
 
-  public HomeWorld setRotation_period(Integer rotation_period) {
+  public DaoHomeWorld setRotation_period(Integer rotation_period) {
     this.rotation_period = rotation_period;
     return this;
   }
@@ -41,7 +61,7 @@ public class HomeWorld {
     return orbital_period;
   }
 
-  public HomeWorld setOrbital_period(Integer orbital_period) {
+  public DaoHomeWorld setOrbital_period(Integer orbital_period) {
     this.orbital_period = orbital_period;
     return this;
   }
@@ -50,7 +70,7 @@ public class HomeWorld {
     return diameter;
   }
 
-  public HomeWorld setDiameter(Integer diameter) {
+  public DaoHomeWorld setDiameter(Integer diameter) {
     this.diameter = diameter;
     return this;
   }
@@ -59,7 +79,7 @@ public class HomeWorld {
     return climate;
   }
 
-  public HomeWorld setClimate(String climate) {
+  public DaoHomeWorld setClimate(String climate) {
     this.climate = climate;
     return this;
   }
@@ -68,7 +88,7 @@ public class HomeWorld {
     return gravity;
   }
 
-  public HomeWorld setGravity(String gravity) {
+  public DaoHomeWorld setGravity(String gravity) {
     this.gravity = gravity;
     return this;
   }
@@ -77,7 +97,7 @@ public class HomeWorld {
     return terrain;
   }
 
-  public HomeWorld setTerrain(String terrain) {
+  public DaoHomeWorld setTerrain(String terrain) {
     this.terrain = terrain;
     return this;
   }
@@ -86,7 +106,7 @@ public class HomeWorld {
     return surface_water;
   }
 
-  public HomeWorld setSurface_water(Integer surface_water) {
+  public DaoHomeWorld setSurface_water(Integer surface_water) {
     this.surface_water = surface_water;
     return this;
   }
@@ -95,7 +115,7 @@ public class HomeWorld {
     return population;
   }
 
-  public HomeWorld setPopulation(Integer population) {
+  public DaoHomeWorld setPopulation(Integer population) {
     this.population = population;
     return this;
   }
@@ -104,7 +124,7 @@ public class HomeWorld {
     return residents;
   }
 
-  public HomeWorld setResidents(List<String> residents) {
+  public DaoHomeWorld setResidents(List<String> residents) {
     this.residents = residents;
     return this;
   }
@@ -113,7 +133,7 @@ public class HomeWorld {
     return films;
   }
 
-  public HomeWorld setFilms(List<String> films) {
+  public DaoHomeWorld setFilms(List<String> films) {
     this.films = films;
     return this;
   }
@@ -122,7 +142,7 @@ public class HomeWorld {
     return created;
   }
 
-  public HomeWorld setCreated(String created) {
+  public DaoHomeWorld setCreated(String created) {
     this.created = created;
     return this;
   }
@@ -131,7 +151,7 @@ public class HomeWorld {
     return edited;
   }
 
-  public HomeWorld setEdited(String edited) {
+  public DaoHomeWorld setEdited(String edited) {
     this.edited = edited;
     return this;
   }
@@ -140,7 +160,7 @@ public class HomeWorld {
     return url;
   }
 
-  public HomeWorld setUrl(String url) {
+  public DaoHomeWorld setUrl(String url) {
     this.url = url;
     return this;
   }
