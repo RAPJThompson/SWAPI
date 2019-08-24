@@ -1,9 +1,12 @@
 package com.swapi.ws;
 
-import com.swapi.service.HomeWorldService;
-import com.swapi.service.PersonService;
+import com.swapi.service.*;
+import com.swapi.ws.models.WSFilm;
 import com.swapi.ws.models.WSHomeWorld;
 import com.swapi.ws.models.WSPerson;
+import com.swapi.ws.models.WSSpecies;
+import com.swapi.ws.models.WSStarship;
+import com.swapi.ws.models.WSVehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +20,26 @@ public class swapiController {
 
   private PersonService personService;
   private HomeWorldService homeWorldService;
+  private SpeciesService speciesService;
+  private FilmService filmService;
+  private StarShipService starShipService;
+  private VehicleService vehicleService;
 
   @Autowired
-  public swapiController(PersonService personService, HomeWorldService homeWorldService) {
+  public swapiController(
+      PersonService personService,
+      HomeWorldService homeWorldService,
+      SpeciesService speciesService,
+      FilmService filmService,
+      StarShipService starShipService,
+      VehicleService vehicleService
+  ) {
     this.personService = personService;
     this.homeWorldService = homeWorldService;
+    this.speciesService = speciesService;
+    this.filmService = filmService;
+    this.starShipService = starShipService;
+    this.vehicleService = vehicleService;
   }
 
   @RequestMapping(
@@ -42,9 +60,36 @@ public class swapiController {
     return new WSHomeWorld(homeWorldService.getHomeWorld(id, populateChildren));
   }
 
+  @RequestMapping(
+      value = "/films/{id}",
+      method = RequestMethod.GET
+  )
+  public WSFilm getFilm(@PathVariable Integer id, @RequestParam(required = false, defaultValue = "false") Boolean populateChildren) {
+    return null;
+  }
 
-  //  Film getFilm(Integer id, Boolean populateChildren);
-  //  Species getSpecies(Integer id, Boolean populateChildren);
-  //  Vehicle getVehicle(Integer id, Boolean populateChildren);
-  //  WSStarship getStarship(Integer id, Boolean populateChildren);
+  @RequestMapping(
+      value = "/species/{id}",
+      method = RequestMethod.GET
+  )
+  public WSSpecies getSpecies(@PathVariable Integer id, @RequestParam(required = false, defaultValue = "false") Boolean populateChildren) {
+    return null;
+  }
+
+  @RequestMapping(
+      value = "/vehicles/{id}",
+      method = RequestMethod.GET
+  )
+  public WSVehicle getVehicle(@PathVariable Integer id, @RequestParam(required = false, defaultValue = "false") Boolean populateChildren) {
+    return null;
+  }
+
+  @RequestMapping(
+      value = "/starships/{id}",
+      method = RequestMethod.GET
+  )
+  public WSStarship getStarship(@PathVariable Integer id, @RequestParam(required = false, defaultValue = "false") Boolean populateChildren) {
+    return null;
+  }
+
 }

@@ -10,7 +10,7 @@ public class ServiceManager {
   private HomeWorldService homeWorldService;
   private SpeciesService speciesService;
   private FilmService filmService;
-  private SpaceShipService spaceShipService;
+  private StarShipService starShipService;
   private VehicleService vehicleService;
 
   public PersonService getPersonService() {
@@ -51,12 +51,12 @@ public class ServiceManager {
     return this;
   }
 
-  public SpaceShipService getSpaceShipService() {
-    return spaceShipService;
+  public StarShipService getStarShipService() {
+    return starShipService;
   }
 
-  public ServiceManager setSpaceShipService(SpaceShipService spaceShipService) {
-    this.spaceShipService = spaceShipService;
+  public ServiceManager setStarShipService(StarShipService starShipService) {
+    this.starShipService = starShipService;
     return this;
   }
 
